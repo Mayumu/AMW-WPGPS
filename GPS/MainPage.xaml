@@ -1,0 +1,40 @@
+﻿<phone:PhoneApplicationPage
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:maps="clr-namespace:Microsoft.Phone.Maps.Controls;assembly=Microsoft.Phone.Maps"
+    x:Class="GPS.MainPage"
+    mc:Ignorable="d"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    SupportedOrientations="Portrait" Orientation="Portrait"
+    shell:SystemTray.IsVisible="True">
+
+    <!--LayoutRoot is the root grid where all page content is placed-->
+    <Grid x:Name="LayoutRoot" Background="Transparent">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <StackPanel x:Name="TitlePanel" Grid.Row="0" Margin="12,17,0,28">
+            <TextBlock Text="Paweł Cyman" Style="{StaticResource PhoneTextNormalStyle}" Margin="12,0"/>
+            <TextBlock Text="WP GPS Test" Margin="9,-7,0,0" Style="{StaticResource PhoneTextTitle1Style}"/>
+        </StackPanel>
+
+        <!--ContentPanel - place additional content here-->
+        <Grid x:Name="ContentPanel" Grid.Row="1" Margin="10,0,14,0">
+            <TextBlock x:Name="textblockLatitude" HorizontalAlignment="Left" Margin="10,76,0,0" TextWrapping="Wrap" Text="Latitude: " VerticalAlignment="Top"/>
+            <TextBlock x:Name="textblockAltitude" HorizontalAlignment="Left" Margin="10,108,0,0" TextWrapping="Wrap" Text="Altitude: " VerticalAlignment="Top"/>
+            <TextBlock x:Name="textblockLogitude" HorizontalAlignment="Left" Margin="10,140,0,0" TextWrapping="Wrap" Text="Longitude: " VerticalAlignment="Top"/>
+            <maps:Map x:Name="map" HorizontalAlignment="Left" Margin="10,172,0,0" VerticalAlignment="Top" Height="410" Width="436"/>
+        </Grid>
+        <Button x:Name="btnGetCoordinates" Content="Get coordinates" HorizontalAlignment="Left" Margin="12,10,0,0" Grid.Row="1" VerticalAlignment="Top" Width="454" Click="btnGetCoordinates_Click"/>
+
+    </Grid>
+
+</phone:PhoneApplicationPage>
